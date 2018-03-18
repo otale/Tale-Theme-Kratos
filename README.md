@@ -1,8 +1,8 @@
-##copyright
+## copyright
 主题移植自WordPress博客系统的Kratos模板
 
 
-##About Kratos Theme
+## About Kratos Theme
 A clean, simple and responsive blog theme of WordPress,based on Bootstrap and Font Awesome. Created and maintained by Vtrois.
 
 
