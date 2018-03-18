@@ -1,0 +1,91 @@
+#if(null != article)
+<div id="${article.cid ?! 0}" class="comment-container">
+<div id="comments" class="comments-area">
+        #if(article.allowComment)
+
+        #set( comments = comments(50) )
+
+        #if(!is_empty(comments))
+        <ol class="comment-list">
+            #for(comment : comments(50).rows)
+            <li id="comment-${comment.coid}" class="comment even thread-even depth-1 parent">
+                <div id="div-comment-${comment.coid}" class="comment-body">    
+                    <div class="comment-author vcard">
+                        <img class="avatar avatar photo" src="${gravatar(comment.mail)}?s=32&r=G&d=" title="${comment.author}" width="50" height="50"></img>
+                            <cite class="fn">
+                                    <a class="url" href="${comment.url}" rel="external nofollow" target="_blank" >${comment.author}</a>
+                            </cite>
+                    </div>
+                    <div class="comment-meta commentmetadata"> 
+                            <a href="${permalink()}#comments-${comment.coid}">${fmtdate(comment.created)}</a>
+                    </div>
+                        <p>${article(comment.content)}</p>
+                    <div class="reply">
+                        <a class="comment-reply-link" rel="nofollow" onclick="TaleComment.reply('${comment.coid}');">回复</a>
+                    </div>
+                </div>
+                #if(comment.levels > 0)
+                <ol class="children">
+                        #for(child : comment.children)
+                        <li id="comment-${child.coid}" class="comment odd alt depth-2">
+                            <div id="div-comment-${child.coid}" class="comment-body">
+                                    <div class="comment-author vcard">
+                                        <img class="avatar" src="${gravatar(child.mail)}?s=32&r=G&d=" title="${child.author}" width="50" height="50"></img>
+                                        <cite class="fn">${child.author}</cite>
+                                    </div>
+                                    <div class="comment-meta commentmetadata"> 
+                                        <a href="${permalink()}#comments-${child.coid}">${fmtdate(comment.created)}</a>
+                                    </div>
+                                    <p>${article(child.content)}</p>
+                                    <div class="reply">
+                                        <a class="comment-reply-link" rel="nofollow" onclick="TaleComment.reply('${child.coid}');">回复</a>
+                                    </div>
+                            </div>
+                        </li>
+                    #end
+                </ol>
+                #end
+            </li>
+            #end
+        </ol>        
+        #end
+
+        <div id="respond" class="comment-respond">
+        <h4 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="${permalink()}#comments" style="display:none;">取消回复</a></small></h4>
+        <p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p><div class="comment form-group has-feedback"><div class="input-group"><p></p>
+        <span class="response">#if(null!=login_user)登录身份: <a href="${login_user.home_url}">${login_user.username}</a>. <a href="/logout" title="Logout"><?php _e('退出'); ?> &raquo;</a> #end</p> 
+        <form method="post" id="comment-form" class="comment-form" onsubmit="return TaleComment.subComment();">
+            <input type="hidden" name="coid" id="coid"/>
+            <input type="hidden" name="cid" id="cid" value="${article.cid}"/>
+            <input type="hidden" name="csrf_token" value="${csrf_token}"/>
+             <div class="comment-form-author form-group has-feedback"><div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div>
+            <input name="author" maxlength="12" id="author" class="text form-control" placeholder="昵称" value="${login_user.username ?! ''}" required/>
+            <span class="form-control-feedback required">*</span></div></div>           
+             <div class="comment-form-email form-group has-feedback"><div class="input-group"><div class="input-group-addon"><i class="fa fa-envelope-o"></i></div>
+            <input type="email" name="mail" id="mail" class="text form-control" placeholder="邮箱" value="${login_user.email ?! ''}" required/>
+            <span class="form-control-feedback required">*</span></div></div>           
+            <div class="comment-form-url form-group has-feedback"><div class="input-group"><div class="input-group-addon"><i class="fa fa-link"></i></div>
+            <input type="url" name="url" id="url" class="text form-control" placeholder="网站" value="${login_user.home_url ?! ''}"/>
+           </div>
+           </div>
+           <div class="comment form-group has-feedback"><div class="input-group">
+           <p id="smiley" class="smiley">
+           
+           </p>
+            <textarea rows="6" cols="120%" name="content" id="comment" class="textarea form-control" required minlength="5" maxlength="2000"></textarea>
+            </div>
+            </div>
+			<p>
+           <button type="submit" class="btn btn-primary" id="submit">提交评论</button>
+			</p>
+        </form>
+		</div>
+		
+        #else
+        <span class="response">评论已关闭.</span>
+        #end
+        
+    </div>
+</div>
+#end
+#include('/comm/tale_comment.html')

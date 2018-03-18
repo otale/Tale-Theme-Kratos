@@ -1,0 +1,65 @@
+<aside id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm scrollspy">
+<div id="sidebar">
+	<aside id="kratos_about-3" class="widget amadeus_about clearfix">
+		<div class="photo-background">
+			<div class="photo-background" style="background:url(${theme_url('/static/images/about.jpg')}) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;"></div>
+		</div>
+		<div class="photo-wrapper clearfix">
+			<div class="photo-wrapper-tip text-center">
+				<a href="${site_url()}/admin">
+					<img src="${theme_option('logo_url')}" class="about-photo">
+				</a>
+			</div>
+		</div>
+		<div class="textwidget">
+			<p class="text-left">${theme_option('textleft')}</p>
+		</div>
+	</aside>
+	<aside class="widget widget_kratos_poststab">
+		<ul id="tabul" class="nav nav-tabs nav-justified visible-lg">
+			<li class="active"><a href="#newest" data-toggle="tab"> 最新文章</a></li>
+			<li><a href="#hot" data-toggle="tab">最热回复</a></li>
+		</ul>
+		<ul id="tabul" class="nav nav-tabs nav-justified visible-md">
+			<li class="active"><a href="#newest" data-toggle="tab"> 最新</a></li>
+			<li><a href="#hot" data-toggle="tab">最热</a></li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane fade in active" id="newest">
+				<ul class="list-group">
+				#for(article : recent_articles(5))
+				<a class="list-group-item visible-md visible-lg" title="${title()}" href="${permalink()}"><i class="fa  fa-book"></i> ${title()}</a>#end
+			    </ul>
+			</div>
+			<div class="tab-pane fade" id="hot">
+			<ul class="list-group">
+			#for(comm : recent_comments(5))
+			<a class="list-group-item visible-md visible-lg" href="${site_url('/article/')}${comm.cid}#comment-${comm.coid}">
+			<i class="fa  fa-book"></i>
+			${comm.author}: ${comm.content}
+			</a>
+			#end
+			</ul>
+			</div>
+		</div>
+	</aside>
+	<aside id="categories" class="widget widget_categories clearfix"><h4 class="widget-title">分类目录</h4><ul>
+	#for(c : categories())
+	<li class="cat-item cat-item"><a href="/category/${c.name}/" >${c.name}</a></li>#end
+	</li>
+</ul>
+</aside>
+		<aside id="kratos_tags-2" class="widget widget_kratos_tags clearfix"><h4 class="widget-title">标签聚合</h4>
+		<div class="tag_clouds">
+		#for(t : tags())
+			<a class="" href="/tag/${t.name}/" title="${t.name}">${t.name}</a>#end
+		</div>
+	    </aside>
+		<aside id="linkcat" class="widget widget_links clearfix"><h4 class="widget-title">书签</h4>
+			<ul class='xoxo blogroll'>
+				<li><a href="http://blog.2aa.win">MoonRiver Blog</a></li>
+				${theme_option('widget_links')}
+			</ul>
+		</aside>
+</div>
+</aside>

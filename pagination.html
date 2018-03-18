@@ -1,0 +1,23 @@
+#if(pageInfo.hasPrevPage || pageInfo.hasNextPage)
+<nav class="pagination">
+    #if(pageInfo.hasPrevPage)
+    <li class="prev"><a href="${site_url(page_prefix + '/' + pageInfo.prevPage)}">«</a>
+    </li>
+    #end
+
+    #for(navIndex : pageInfo.navPageNums)
+        #if(pageInfo.pageNum== navIndex)
+        <li class="current"><a href="#">${navIndex}</a>
+        </li>
+        #else
+        <li class="current"><a href="${site_url(page_prefix + '/' + navIndex)}">${navIndex}</a>
+        </li>
+        #end
+    #end
+	
+    #if(pageInfo.hasNextPage)
+    <li class="next"><a href="${site_url(page_prefix + '/' + pageInfo.nextPage)}">»</a>
+    </li>
+    #end
+</nav>
+#end

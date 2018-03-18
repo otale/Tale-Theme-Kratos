@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<meta charset="UTF-8">
+		<title>${head_title()} | ${site_subtitle()}</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="${site_description()}" />
+		<meta name="keywords" content="${meta_keywords()}" />
+
+		<link rel='stylesheet' id='animate-style-css'  href='${theme_url('/static/css/animate.min.css?ver=3.5.1')}' type='text/css' media='all' />
+		<link rel='stylesheet' id='awesome-style-css'  href='${theme_url('/static/css/font-awesome.min.css?ver=4.7.0')}' type='text/css' media='all' />
+		<link rel='stylesheet' id='bootstrap-style-css'  href='${theme_url('/static/css/bootstrap.min.css?ver=3.3.7')}' type='text/css' media='all' />
+		<link rel='stylesheet' id='superfish-style-css'  href='${theme_url('/static/css/superfish.min.css?ver=r7')}' type='text/css' media='all' />
+		<link rel='stylesheet' id='kratos-style-css'  href='${theme_url('/static/css/style.css?ver=2.5.1')}' type='text/css' media='all' />
+		<link rel='stylesheet' id='kratos-diy-style-css'  href='${theme_url('/static/css/kratos.diy.css?ver=2.5.1')}' type='text/css' media='all' />
+	</head>
+		<body data-spy="scroll" data-target=".scrollspy">
+		<div id="kratos-wrapper">
+			<div id="kratos-page">
+				<div class="kratos-header">
+					<header id="kratos-header-section">
+						<div class="container">
+							<div class="nav-header">
+									<a href="#" class="js-kratos-nav-toggle kratos-nav-toggle"><i></i></a>
+									<h1 id="kratos-logo"><a href="${site_url()}/">${site_title()}</a></h1>
+								<nav id="kratos-menu-wrap" class="menu-menu-container">
+									<ul id="kratos-primary-menu" class="sf-menu">
+									<li><a href="/">主页</a></li>
+										<li>
+										<a href="/category">
+											分类
+										</a>
+										<ul class="sub-menu">
+											#for(a : categories())
+											<li><a href="/category/${a.name}">${a.name}</a></li>#end
+										</ul>
+										</li>
+										<li><a href="${site_url()}/links.html">友链</a></li>
+										<li><a href="${site_url()}/aboul.html">关于</a></li>
+									</ul>
+								</nav>							
+							</div>
+						</div>
+					</header>
+				</div>
+				<div class="kratos-start kratos-hero-2">
+				<div class="kratos-overlay"></div>
+				<div class="kratos-cover kratos-cover_2 text-center" style="background-image: url(${theme_url('/static/images/background.jpg')});">
+				<div class="desc desc2 animate-box">
+				<h2>念念不忘</h2>
+				<span>必有回响</span>
+				</div>
+				</div>
+				</div>
+<div id="kratos-blog-post" style="background:">
