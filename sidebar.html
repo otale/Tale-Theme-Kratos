@@ -7,12 +7,20 @@
 		<div class="photo-wrapper clearfix">
 			<div class="photo-wrapper-tip text-center">
 				<a href="${site_url()}/admin">
+					#if(theme_option('logo_url') == "")
+					<img src="${theme_url('/static/images/avatar.jpg')}" class="about-photo">
+					#else
 					<img src="${theme_option('logo_url')}" class="about-photo">
+					#end
 				</a>
 			</div>
 		</div>
 		<div class="textwidget">
+			#if(theme_option('textleft') == "")
+			<p class="text-left">没有天生的高手，更没有永远的菜鸟</p>
+			#else
 			<p class="text-left">${theme_option('textleft')}</p>
+			#end
 		</div>
 	</aside>
 	<aside class="widget widget_kratos_poststab">

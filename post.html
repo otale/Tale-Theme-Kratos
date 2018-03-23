@@ -82,10 +82,13 @@
 							</div>
                                 <div class="footer-tag clearfix">
 								<div class="pull-left">
-								#if(tags != null)
 								<i class="fa fa-tags"></i>
-								${show_tags()}	
-								#end								
+								#if(tags != null)
+								<a href="#">NOT TAG</a>
+								#else
+								#for(tg : tag_list())
+								<a href="/tag/${item}">${tg}</a>#end
+								#end
 								</div>
 							</div>
 						</footer>

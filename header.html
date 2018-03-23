@@ -7,7 +7,7 @@
 		<meta http-equiv="Cache-Control" content="no-transform" />
 		<meta http-equiv="Cache-Control" content="no-siteapp" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<meta name="description" content="${site_description()}" />
+		<meta name="description" content="#if(!is_post)${site_description()}#else${excerpt(50)}#end" />
 		<meta name="keywords" content="${meta_keywords()}" />
 
 		<link rel='stylesheet' id='animate-style-css'  href='${theme_url('/static/css/animate.min.css?ver=3.5.1')}' type='text/css' media='all' />

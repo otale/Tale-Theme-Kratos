@@ -17,7 +17,7 @@
                             </cite>
                     </div>
                     <div class="comment-meta commentmetadata"> 
-                            <a href="${permalink()}#comments-${comment.coid}">${fmtdate(comment.created)}</a>
+                            <a href="${permalink()}#comments-${comment.coid}">${fmtdate(comment.created, 'yyyy年MM月dd日 HH:mm')}</a>
                     </div>
                         <p>${article(comment.content)}</p>
                     <div class="reply">
@@ -34,7 +34,7 @@
                                         <cite class="fn">${child.author}</cite>
                                     </div>
                                     <div class="comment-meta commentmetadata"> 
-                                        <a href="${permalink()}#comments-${child.coid}">${fmtdate(comment.created)}</a>
+                                        <a href="${permalink()}#comments-${child.coid}">${fmtdate(comment.created, 'yyyy年MM月dd日 HH:mm')}</a>
                                     </div>
                                     <p>${article(child.content)}</p>
                                     <div class="reply">

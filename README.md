@@ -1,6 +1,10 @@
+##update 03-23 2018
+1.文章页头部description添加文章描述,利于SEO优化。
+2.侧边栏,评论模块,文章页代码优化
+
 ## copyright
 主题移植自WordPress博客系统的Kratos模板
-
+https://github.com/Vtrois/Kratos
 
 ## About Kratos Theme
 A clean, simple and responsive blog theme of WordPress,based on Bootstrap and Font Awesome. Created and maintained by Vtrois.
