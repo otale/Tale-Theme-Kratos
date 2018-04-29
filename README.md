@@ -26,7 +26,9 @@ A clean, simple and responsive blog theme of WordPress,based on Bootstrap and Fo
 
 1.github下载按钮
 
+```
 <p><a class="downbtn" href="http://下载链接" target="_blank"><i class="fa fa-download"></i>Github下载</a></p>
+```
 
 2.未完待续.........
 
