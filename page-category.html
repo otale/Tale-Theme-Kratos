@@ -3,8 +3,11 @@
     <div class="row">
         <section id="main" class="col-md-8">
                 <div class="kratos-hentry clearfix">
-                        <h1 class="kratos-post-header-title">${keyword} 下的文章</h1>
-    </div>
+						#if(is_empty(articles))
+						<h1 class="kratos-post-header-title">抱歉，还没有相关文章.</h1>
+						#else
+                        <h1 class="kratos-post-header-title">${type} : ${keyword}</h1>#end		
+				</div>
 
     #for(article : articles.rows)
     <article class="kratos-hentry clearfix">
@@ -19,7 +22,7 @@
                     <h2 class="kratos-entry-title-new"><a href="${permalink()}">${title()}</a></h2>
                 </header>
                 <div class="kratos-entry-content-new">
-                    <p>${excerpt(200)}</p>
+                    <p>${excerpt(110)}...</p>
                 </div>
             </div>
             <div class="kratos-post-meta-new">
@@ -36,10 +39,7 @@
             </div>
         </div>
     </article>
-        #end
-                <div class="text-center" id="page-footer">
-#include('./pagination.html', {pageInfo: articles(5)})
-                </div>
+#end
 </section>
 #include('./sidebar.html')
 </div>

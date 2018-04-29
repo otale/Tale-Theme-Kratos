@@ -12,11 +12,11 @@
             </div>
             <div class="panel-body">
                     <div class="form-group">
-                        <label class="col-md-3 control-label">主题LOGO</label>
+                        <label class="col-md-3 control-label">侧边栏个人头像</label>
                             <div class="col-md-9">
                                 <input type="text" class="form-control" name="logo_url"
                                        value="${options.logo_url ?! theme_url('/static/images/avatar.jpg')}"
-                                       placeholder="请输入主题LOGO外链"/>
+                                       placeholder="请输入头像外链"/>
                             </div>
                     </div>
                 <div class="form-group">
@@ -24,6 +24,34 @@
                     <div class="col-md-9">
                         <input type="text" class="form-control" name="donate"
                                value="${options.donate ?! 'blog.2aa.win/donate'}" placeholder="文章页打赏链接">
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label class="col-md-3 control-label">背景图片</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="background_image_url"
+                               value="${options.background_image_url ?! theme_url('/static/images/background.jpg')}" placeholder="网站背景图片">
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label class="col-md-3 control-label">网站背景颜色</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="site_colour"
+                               value="${options.site_colour ?! '#FFFFFF'}" placeholder="请输入颜色代码">
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label class="col-md-3 control-label">背景图片大标题</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="big_title"
+                               value="${options.bigtitle ?! '念念不忘'}" placeholder="请输入背景图片大标题">
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label class="col-md-3 control-label">背景图片小标题</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="small_title"
+                               value="${options.smalltitle ?! '必有回响'}" placeholder="请输入背景图片小标题">
                     </div>
                 </div>
                 <div class="form-group">

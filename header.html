@@ -2,7 +2,7 @@
 <html class="no-js">
 	<head>
 		<meta charset="UTF-8">
-		<title>${head_title()} | ${site_subtitle()}</title>
+		<title>${head_title()} ${site_subtitle()}</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta http-equiv="Cache-Control" content="no-transform" />
 		<meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -30,16 +30,16 @@
 									<ul id="kratos-primary-menu" class="sf-menu">
 									<li><a href="/">主页</a></li>
 										<li>
-										<a href="/category">
-											分类
+										<a href="#">
+											文章
 										</a>
 										<ul class="sub-menu">
 											#for(a : categories())
 											<li><a href="/category/${a.name}">${a.name}</a></li>#end
 										</ul>
 										</li>
-										<li><a href="${site_url()}/links.html">友链</a></li>
-										<li><a href="${site_url()}/about.html">关于</a></li>
+										<li><a href="/links.html">友链</a></li>
+										<li><a href="/about.html">关于</a></li>
 									</ul>
 								</nav>							
 							</div>
@@ -48,11 +48,15 @@
 				</div>
 				<div class="kratos-start kratos-hero-2">
 				<div class="kratos-overlay"></div>
+				#if(theme_option('background_image_url') == "")
 				<div class="kratos-cover kratos-cover_2 text-center" style="background-image: url(${theme_url('/static/images/background.jpg')});">
+				#else
+				<div class="kratos-cover kratos-cover_2 text-center" style="background-image: url(${theme_option('background_image_url')});">
+				#end
 				<div class="desc desc2 animate-box">
-				<h2>念念不忘</h2>
-				<span>必有回响</span>
+				<h2>${theme_option('big_title')}</h2>
+				<span>${theme_option('small_title')}</span>
 				</div>
 				</div>
 				</div>
-<div id="kratos-blog-post" style="background:">
+<div id="kratos-blog-post" style="background:${theme_option('site_colour')}">
