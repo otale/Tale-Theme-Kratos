@@ -19,13 +19,6 @@
                                        placeholder="请输入头像外链"/>
                             </div>
                     </div>
-                <div class="form-group">
-                    <label class="col-md-3 control-label">打赏</label>
-                    <div class="col-md-9">
-                        <input type="text" class="form-control" name="donate"
-                               value="${options.donate ?! 'blog.2aa.win/donate'}" placeholder="文章页打赏链接">
-                    </div>
-                </div>
 				<div class="form-group">
                     <label class="col-md-3 control-label">背景图片</label>
                     <div class="col-md-9">
@@ -37,7 +30,7 @@
                     <label class="col-md-3 control-label">网站背景颜色</label>
                     <div class="col-md-9">
                         <input type="text" class="form-control" name="site_colour"
-                               value="${options.site_colour ?! '#FFFFFF'}" placeholder="请输入颜色代码">
+                               value="${options.site_colour ?! ''}" placeholder="请输入颜色代码,如#ffffff">
                     </div>
                 </div>
 				<div class="form-group">
@@ -61,7 +54,7 @@
                                value="${options.text.left ?! '没有天生的高手，更没有永远的菜鸟 求知若饥，虚心若愚'}" placeholder="侧边栏个人介绍">
                     </div>
                 </div>
-                <div class="clearfix pull-right">
+				<div class="clearfix pull-right">
                     <button type="button" class="btn btn-primary waves-effect waves-light"
                             onclick="saveThemeOptions('option-from')">
                         保存设置
@@ -70,6 +63,43 @@
             </div>
         </div>
     </div>
+	
+	<div class="col-md-6">
+        <div class="panel panel-color panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">打赏二维码设置</h3>
+            </div>
+            <div class="panel-body">
+				<div class="form-group">
+                    <label class="col-md-3 control-label">支付宝打赏</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="alipay"
+                               value="${options.alipay ?! theme_url('/static/images/alipay.jpg')}" placeholder="侧边栏个人介绍">
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label class="col-md-3 control-label">微信打赏</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="weixinpay"
+                               value="${options.weixinpay ?! theme_url('/static/images/weixinpay.jpg')}" placeholder="侧边栏个人介绍">
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label class="col-md-3 control-label">QQ打赏</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="qqpay"
+                               value="${options.qqpay ?! theme_url('/static/images/qqpay.jpg')}" placeholder="侧边栏个人介绍">
+                    </div>
+                </div>
+				<div class="clearfix pull-right">
+                    <button type="button" class="btn btn-primary waves-effect waves-light"
+                            onclick="saveThemeOptions('option-from')">
+                        保存设置
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>	
     <div class="clearfix"></div>
     <div class="col-md-6">
         <div class="panel panel-color panel-inverse">

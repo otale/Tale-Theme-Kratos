@@ -36,14 +36,14 @@
 			<div class="tab-pane fade in active" id="newest">
 				<ul class="list-group">
 				#for(article : recent_articles(5))
-				<a class="list-group-item visible-md visible-lg" title="${title()}" href="${permalink()}"><i class="fa  fa-book"></i> ${title()}</a>#end
+				<a class="list-group-item visible-md visible-lg" title="${title()}" href="${permalink()}"><i class="fa fa-book"></i>${title()}</a>#end
 			    </ul>
 			</div>
 			<div class="tab-pane fade" id="hot">
 			<ul class="list-group">
 			#for(comm : recent_comments(5))
 			<a class="list-group-item visible-md visible-lg" href="${site_url('/article/')}${comm.cid}#comment-${comm.coid}">
-			<i class="fa  fa-book"></i>
+			<i class="fa fa-book"></i>
 			${comm.author}: ${comm.content}
 			</a>
 			#end

@@ -7,6 +7,10 @@
 			$(".share-wrap").fadeToggle("slow");
 		});
 
+		$(".Donate").click(function() {
+			$(".panel-reward").fadeToggle("slow");
+		});
+		
 		$('.qrcode').each(function(index, el) {
 			var url = $(this).data('url');
 			if ($.fn.qrcode) {
@@ -18,7 +22,42 @@
 			}
 		});
 	}
+	
+	var topStart = function() {
+		$('#top-Start').click(function() {
+			$('html,body').animate({
+				scrollTop: $('#kratos-blog').offset().top
+			}, 1000);
+		});
+	};
 
+	var toSearch = function(){
+        $('.search-box').on("click",function(e){
+            $("#searchform").animate({width:"200px"},200),
+            $("#searchform input").css('display','block');
+            $(document).one("click", function(){
+                $("#searchform").animate({width:"0"},100),
+                $("#searchform input").hide();
+            });
+            e.stopPropagation();
+        });
+        $('#searchform').on("click",function(e){e.stopPropagation();})
+    }
+	
+	var OwOcfg = function(){
+        if($("#comment-form").height()){
+            var OwO_demo = new OwO({
+                logo:'OωO表情',
+                container:document.getElementsByClassName('OwO')[0],
+                target:document.getElementsByClassName('OwO')[0],
+                api:xb.thome+'/static/js/OwO.json',
+                position:'down',
+                width:'90%',
+                maxHeight:'250px'
+            });
+        }
+    }
+	
 	var isiPad = function() {
 		return (navigator.platform.indexOf("iPad") != -1);
 	};
@@ -162,62 +201,34 @@
 	}
 
 	var showlove = function() {
-	    $.fn.postLike = function() {
-	        if ($(this).hasClass('done')) {
-	            alert('您已赞过该文章');
-	            return false;
-	        } else {
-	            $(this).addClass('done');
-	            var id = $(this).data("id"),
-	            action = $(this).data('action'),
-	            rateHolder = $(this).children('.count');
-	            var ajax_data = {
-	                action: "love",
-	                um_id: id,
-	                um_action: action
-	            };
-	            $.post("/wp-admin/admin-ajax.php", ajax_data,
-	            function(data) {
-	                $(rateHolder).html(data);
-	            });
-				$.tipsBox({
-					obj: $(this),
-					str: "<i class='fa fa-thumbs-o-up'></i> + 1",
-					callback: function () {
-					}
-				});
-	            return false;
-	        }
-	    };
-	    $(document).on("click", ".Love",
-	        function() {
-	            $(this).postLike();
-	    });
-	}
+			$.fn.postLike = function() {
+				if ($(this).hasClass('done')) {
+					layer.msg('感谢您的支持');
+					return false;
+				}
+			};
+			$(document).on("click", ".Love", function() {
+				$(this).postLike();
+			});
+		}
 
-	var gotop = function() {
-		var offset = 300,
-			offset_opacity = 1200,
-			scroll_top_duration = 700,
-			$back_to_top = $('.cd-top'),
-			$cd_gb = $('.cd-gb'),
-			$cd_weixin = $('.cd-weixin');
-		$(window).scroll(function(){
-			( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-			if( $(this).scrollTop() > offset_opacity ) { 
-				$back_to_top.addClass('cd-fade-out');
-				$cd_gb.addClass('cd-fade-out');
-				$cd_weixin.addClass('cd-fade-out');
-			}
-		});
-		$back_to_top.on('click', function(event){
-			event.preventDefault();
-			$('body,html').animate({
-				scrollTop: 0 ,
-			 	}, scroll_top_duration
-			);
-		});
-	}
+	var gotop = function(){
+        $('.gotop-box').on('click',function(event){
+            event.preventDefault();
+            $('html, body').animate({
+                scrollTop:$('html').offset().top
+            },500);
+            return false;
+        });
+        $(window).scroll(function(){
+            var $win = $(window);
+            if ($win.scrollTop()>200){
+                $('.gotop-box').addClass('active');
+            }else{
+                $('.gotop-box').removeClass('active');
+            }
+        });
+    }
 	
 	var weixinpic = function() {
 		$("#weixin-img").mouseout(function(){
@@ -228,21 +239,31 @@
 	    })
 	}
 
+	var showPhotos = function(){
+        layer.photos({
+          photos:'.kratos-post-content',
+          anim: 0
+        });
+    }
+	
 	var copyright = function() {
 		console.log("╔╦╗┬ ┬┌─┐┌┬┐┌─┐  ╦╔═┬─┐┌─┐┌┬┐┌─┐┌─┐  ╔╦╗┌─┐┌┬┐┌─┐  ╔╗ ┬ ┬  ╦  ╦┌┬┐┬─┐┌─┐┬┌─┐\n ║ ├─┤├┤ │││├┤   ╠╩╗├┬┘├─┤ │ │ │└─┐  ║║║├─┤ ││├┤   ╠╩╗└┬┘  ╚╗╔╝ │ ├┬┘│ ││└─┐\n ╩ ┴ ┴└─┘┴ ┴└─┘  ╩ ╩┴└─┴ ┴ ┴ └─┘└─┘  ╩ ╩┴ ┴─┴┘└─┘  ╚═╝ ┴    ╚╝  ┴ ┴└─└─┘┴└─┘\n");
-		console.log("Kratos 主题下载：https://github.com/Vtrois/Kratos");
-		console.log("Kratos 主题使用：https://www.vtrois.com/kratos-faq.html");
-		console.log("Kratos 文章样式：https://www.vtrois.com/kratos-article-style.html");
+		console.log("Tale-Kratos 主题下载：https://github.com/zoujiayu/tale-theme-Kratos");
+		console.log("--------THEME KRATOS MADE BY VTROIS TRANSPLANT BY MOONRIVER--------");
 	}
 
 	$(function() {
+		topStart();
+		gotop();
+		showPhotos();
 		mainMenu();
 		shareMenu();
 		parallax();
 		offcanvas();
 		showThumb();
 		showlove();
-		gotop();
+		toSearch();
+		OwOcfg();
 		weixinpic();
 		mobileMenuOutsideClick();
 		contentWayPoint();

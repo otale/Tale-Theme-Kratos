@@ -24,15 +24,17 @@ A clean, simple and responsive blog theme of WordPress,based on Bootstrap and Fo
 
 直接在文章添加如下代码即可引用
 
-1.github下载按钮
+1.下载按钮
 
 ```
-<p><a class="downbtn" href="http://下载链接" target="_blank"><i class="fa fa-download"></i>Github下载</a></p>
+<p><a class="downbtn" href="下载链接" target="_blank"><i class="fa fa-download"></i>Github下载</a></p>
 ```
 
-2.未完待续.........
+```
+<a class="downbtn downcloud" href="下载链接" target="_blank"><i class="fa fa-cloud-download"></i> 云盘下载</a>
+```
 
-
+2.未完待补充
 
  LICENSE
 

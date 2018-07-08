@@ -10,8 +10,28 @@
 						<div class="kratos-post-content">${show_content()}</div>
 						<footer class="kratos-entry-footer clearfix">
 							<div class="post-like-donate text-center clearfix" id="post-like-donate">
-					   			<a href="http://6666" class="Donate"><i class="fa fa-bitcoin"></i> 打赏</a>
-								<a href="javascript:;"  class="Share" ><i class="fa fa-share-alt"></i> 分享</a>
+					   			<a href="javascript:;" class="Donate"><i class="fa fa-bitcoin"></i> 打赏</a>
+										<a href="javascript:;" id="btn" data-action="love" data-id="1" class="Love  done"><i class="fa fa-thumbs-o-up"></i> 点赞</a>
+					   					<a href="javascript:;"  class="Share" ><i class="fa fa-share-alt"></i> 分享</a>
+								<div class="panel-reward" style="display: none;">
+									<ul class="dsye">
+										#if(theme_option('alipay') == "")
+										<li class="alipay"><img alt="打赏" src="${theme_url('/static/images/alipay.jpg')}"><b>支付宝扫一扫</b></li>
+										#else
+										<li class="alipay"><img alt="打赏" src="${theme_option('alipay')}"><b>支付宝扫一扫</b></li>
+										#end
+										#if(theme_option('weixinpay') == "")
+										<li class="weixinpay"><img alt="打赏" src="${theme_url('/static/images/weixinpay.jpg')}"><b>微信扫一扫</b></li>
+										#else
+										<li class="weixinpay"><img alt="打赏" src="${theme_option('weixinpay')}"><b>微信扫一扫</b></li>
+										#end
+										#if(theme_option('qqpay') == "")
+										<li class="txpay"><img alt="打赏" src="${theme_url('/static/images/qqpay.jpg')}"><b>企鹅扫一扫</b></li>
+										#else
+										<li class="txpay"><img alt="打赏" src="${theme_option('qqpay')}"><b>企鹅扫一扫</b></li>
+										#end
+									</ul>
+								</div>
 								<div class="share-wrap" style="display: none;">
 									<div class="share-group">
 										<a href="javascript:;" class="share-plain twitter" onclick="share('qq');" rel="nofollow">

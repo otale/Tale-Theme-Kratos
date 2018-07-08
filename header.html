@@ -7,15 +7,21 @@
 		<meta http-equiv="Cache-Control" content="no-transform" />
 		<meta http-equiv="Cache-Control" content="no-siteapp" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<meta name="description" content="#if(!is_post)${site_description()}#else${excerpt(50)}#end" />
+		<meta name="description" content="#if(!is_post) ${site_description()} #else ${excerpt(50)}#end" />
 		<meta name="keywords" content="${meta_keywords()}" />
 
 		<link rel='stylesheet' id='animate-style-css'  href='${theme_url('/static/css/animate.min.css?ver=3.5.1')}' type='text/css' media='all' />
 		<link rel='stylesheet' id='awesome-style-css'  href='${theme_url('/static/css/font-awesome.min.css?ver=4.7.0')}' type='text/css' media='all' />
 		<link rel='stylesheet' id='bootstrap-style-css'  href='${theme_url('/static/css/bootstrap.min.css?ver=3.3.7')}' type='text/css' media='all' />
 		<link rel='stylesheet' id='superfish-style-css'  href='${theme_url('/static/css/superfish.min.css?ver=r7')}' type='text/css' media='all' />
-		<link rel='stylesheet' id='kratos-style-css'  href='${theme_url('/static/css/style.css?ver=2.5.1')}' type='text/css' media='all' />
-		<link rel='stylesheet' id='kratos-diy-style-css'  href='${theme_url('/static/css/kratos.diy.css?ver=2.5.1')}' type='text/css' media='all' />
+		<link rel='stylesheet' id='layer-css'  href='${theme_url('/static/css/layer.min.css?ver=2.6')}' type='text/css' media='all' />
+		<link rel='stylesheet' id='kratos-style-css'  href='${theme_url('/static/css/style.css?ver=2.6')}' type='text/css' media='all' />
+
+		<script type='text/javascript' src="${theme_url('/static/js/jquery.min.js?ver=2.1.4')}"></script>
+		
+		<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-shim.min.js"></script>
+		<![endif]-->
 	</head>
 		<body data-spy="scroll" data-target=".scrollspy">
 		<div id="kratos-wrapper">
@@ -28,18 +34,10 @@
 									<h1 id="kratos-logo"><a href="${site_url()}/">${site_title()}</a></h1>
 								<nav id="kratos-menu-wrap" class="menu-menu-container">
 									<ul id="kratos-primary-menu" class="sf-menu">
-									<li><a href="/">主页</a></li>
-										<li>
-										<a href="#">
-											文章
-										</a>
-										<ul class="sub-menu">
-											#for(a : categories())
-											<li><a href="/category/${a.name}">${a.name}</a></li>#end
-										</ul>
-										</li>
-										<li><a href="/links.html">友链</a></li>
-										<li><a href="/about.html">关于</a></li>
+									<li class="current-menu-item"><a href="${site_url('/')}">首页</a></li>
+									<li><a href="${site_url('/archives')}">归档</a></li>
+									<li><a href="${site_url('/links')}">友链</a></li>
+									<li><a href="${site_url('/about')}">关于</a></li>
 									</ul>
 								</nav>							
 							</div>
