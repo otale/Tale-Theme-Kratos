@@ -15,7 +15,7 @@
                         <img class="avatar avatar photo" src="${gravatar(comment.mail)}?s=32&r=G&d=" title="${comment.author}" width="50" height="50"></img>
                             <cite class="fn">
                                     <a class="url" href="${comment.url}" rel="external nofollow" target="_blank" >${comment.author}</a>
-									#if(comment.author_id == 1) <label class="comment-siteauthor">作者</label> #end
+									#if(comment.authorId == 1) <label class="comment-siteauthor">作者</label> #end
                             </cite>
                     </div>
                     <div class="comment-meta commentmetadata"> 
@@ -36,6 +36,7 @@
                                     <div class="comment-author vcard">
                                         <img class="avatar" src="${gravatar(child.mail)}?s=32&r=G&d=" title="${child.author}" width="50" height="50"></img>
                                         <cite class="fn">${child.author}</cite>
+										#if(child.authorId == 1) <label class="comment-siteauthor">作者</label> #end
                                     </div>
                                     <div class="comment-meta commentmetadata"> 
                                         <a href="${permalink()}#comments-${child.coid}">${fmtdate(comment.created, 'yyyy年MM月dd日 HH:mm')}</a>
@@ -70,7 +71,7 @@
         <div id="respond" class="comment-respond">
 		<h4 id="reply-title" class="comment-reply-title">发表评论</h4>
 		<p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p>
-        <span class="response">#if(null!=login_user)登录身份: <a href="${login_user.home_url}">${login_user.username}</a>. <a href="/logout" title="Logout">退出&raquo;</a> #end</p> 
+        <span class="response">#if(null!=login_user) 登录身份: <a href="${login_user.homeUrl}">${login_user.username}</a><a href="/logout" title="Logout">退出&raquo;</a> #end</p> 
         <form method="post" id="comment-form" class="comment-form" onsubmit="return TaleComment.subComment();">
             <input type="hidden" name="coid" id="coid"/>
             <input type="hidden" name="cid" id="cid" value="${article.cid}"/>
@@ -88,17 +89,15 @@
             <input type="email" name="mail" id="mail" class="text form-control" placeholder="邮箱" value="${login_user.email ?! ''}" required/>
             <span class="form-control-feedback required">*</span></div></div>           
             <div class="comment-form-url form-group has-feedback"><div class="input-group"><div class="input-group-addon"><i class="fa fa-link"></i></div>
-            <input type="url" name="url" id="url" class="text form-control" placeholder="网站" value="${login_user.home_url ?! ''}"/>
+            <input type="url" name="url" id="url" class="text form-control" placeholder="网站" value="${login_user.homeUrl ?! ''}"/>
            </div>
            </div>
 			<p>
+			${_csrf_token_input}
            <button type="submit" class="btn btn-primary" id="submit">提交评论</button>
 			</p>
         </form>
 		</div>
-		
-        #else
-        <span class="response" style="display:none;">评论已关闭.</span>
         #end
         
     </div>

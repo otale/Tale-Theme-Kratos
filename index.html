@@ -1,4 +1,4 @@
-#include('./header.html',{home_page:1})
+#include('./partial/header.html',{home_page:1})
 	<div class="container">
 		<div class="row">
 			<section id="main" class="col-md-8">
@@ -34,11 +34,11 @@
 					</article>
 						#end
 						<div class="text-center" id="page-footer">
-						#include('./pagination.html', {pageInfo: articles(5)})
+						#include('./partial/pagination.html', {pageInfo: articles(5)})
 						</div>
 			</section>
-#include('./sidebar.html')
+#include('./partial/sidebar.html')
 		</div>
 	</div>
 </div>
-#include('./footer.html')			
+#include('./partial/footer.html')			

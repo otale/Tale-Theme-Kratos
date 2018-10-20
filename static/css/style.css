@@ -8,6 +8,8 @@ Version: 2.5.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: 简约, 紧凑, 优雅, 情怀, 多栏, 自适应, 响应式, 小工具, 灵活顶部, 主题选项, 打赏组件, 收录优化, 文章分享, 轮播图片, 邮件功能, 社交组件, 广告栏目, 特色图像, 随动边栏, 嵌套评论, 页脚挂件, 自定义边栏, 自定义颜色, 自定义背景, 自定义布局
+Transplant: Tenir
+Transplant: https://notes.52java.cc
 */
 
 @charset "UTF-8";
@@ -99,16 +101,6 @@ blockquote{
 blockquote p:only-child{
 	font-size:16px;
 	color:#080808
-}
-
-code{
-	padding:2px 4px;
-	font-size:90%;
-	color:#333;
-	background-color:#f8f8f8;
-	border-radius:0;
-	border:1px solid #E1E1E1;
-	margin:0 5px
 }
 
 cite{
@@ -2441,7 +2433,7 @@ a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,but
 	margin-left:-25px;
 	width:50px;
 	height:20px;
-	background:url(images/arrow.png) 0 0 no-repeat;
+	background:url(../images/arrow.png) 0 0 no-repeat;
 	background-size:50px 20px;
 	content:''
 }
@@ -3293,7 +3285,7 @@ img.size-smiley{
 .panel-reward ul li{
 	display:inline-block;
 	text-align:center;
-	margin:0 10px 5px;
+	margin:0 12px 5px;
 	padding:5px;
 	border:1px solid #87ddff;
 	border-radius:2px;
@@ -3430,7 +3422,7 @@ img.size-smiley{
 	position:relative;
 	padding:10px 0 0;
 	display:none;
-	right:20px;
+	right:18px;
 }
 
 /*搜索*/
@@ -3731,4 +3723,118 @@ border-radius:0 4px 4px 4px
 	font-size:14px;
 	float:right;
 	color:#000
+}
+
+/* copyright */
+.post-copyright {
+	position: relative;
+	font-size: 13px;
+	color: #666;
+	background: #fff;
+	padding: 10px 15px;
+	word-wrap: break-word;
+	border-style: solid
+}
+
+.post-copyright p {
+	margin: 0
+}
+
+.post-copyright p a {
+	color: #17a7dd
+}
+
+.post-copyright>.sidetags>a {
+	border-bottom: 0
+}
+
+.sidetags a {
+	position: relative;
+	font-size: 12px;
+	padding-left: 15px;
+	margin: 0 2px
+}
+
+.sidetags a:nth-child(6n+1) {
+	color: #e14938
+}
+
+.sidetags a:nth-child(6n+1):before {
+	content: "";
+	position: absolute;
+	top: 4px;
+	left: 5px;
+	width: 8px;
+	height: 8px;
+	border: 1px solid #e14938;
+	border-radius: 50%
+}
+
+.sidetags a:nth-child(6n+2) {
+	color: #17a7dd
+}
+
+.sidetags a:nth-child(6n+2):before {
+	content: "";
+	position: absolute;
+	top: 4px;
+	left: 5px;
+	width: 8px;
+	height: 8px;
+	border: 1px solid #17a7dd;
+	border-radius: 50%
+}
+
+.sidetags a:nth-child(6n+3) {
+	color: #00A753
+}
+
+.sidetags a:nth-child(6n+3):before {
+	content: "";
+	position: absolute;
+	top: 4px;
+	left: 5px;
+	width: 8px;
+	height: 8px;
+	border: 1px solid #00A753;
+	border-radius: 50%
+}
+
+.sidetags a:nth-child(6n+4) {
+	color: #FF8C00
+}
+
+.sidetags a:nth-child(6n+4):before {
+	content: "";
+	position: absolute;
+	top: 4px;
+	left: 5px;
+	width: 8px;
+	height: 8px;
+	border: 1px solid #FF8C00;
+	border-radius: 50%
+}
+
+.sidetags a:nth-child(6n+5) {
+	color: #836FFF
+}
+
+.sidetags a:nth-child(6n+5):before {
+	content: "";
+	position: absolute;
+	top: 4px;
+	left: 5px;
+	width: 8px;
+	height: 8px;
+	border: 1px solid #836FFF;
+	border-radius: 50%
+}
+
+.panel-sort {
+	border: 1px solid #eaeaea;
+	box-shadow: none
+}
+
+.panel-sort {
+		padding: 20px
 }

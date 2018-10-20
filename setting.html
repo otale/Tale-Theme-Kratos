@@ -19,6 +19,13 @@
                                        placeholder="请输入头像外链"/>
                             </div>
                     </div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">文章作者</label>
+						<div class="col-md-9">
+							<input type="text" class="form-control" name="author"
+                               value="${options.author.name ?! ''}" placeholder="您的博客昵称">
+						</div>
+					</div>
 				<div class="form-group">
                     <label class="col-md-3 control-label">背景图片</label>
                     <div class="col-md-9">
@@ -37,21 +44,21 @@
                     <label class="col-md-3 control-label">背景图片大标题</label>
                     <div class="col-md-9">
                         <input type="text" class="form-control" name="big_title"
-                               value="${options.bigtitle ?! '念念不忘'}" placeholder="请输入背景图片大标题">
+                               value="${options.bigtitle ?! ''}" placeholder="请输入背景图片大标题">
                     </div>
                 </div>
 				<div class="form-group">
                     <label class="col-md-3 control-label">背景图片小标题</label>
                     <div class="col-md-9">
                         <input type="text" class="form-control" name="small_title"
-                               value="${options.smalltitle ?! '必有回响'}" placeholder="请输入背景图片小标题">
+                               value="${options.smalltitle ?! ''}" placeholder="请输入背景图片小标题">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">个人介绍</label>
                     <div class="col-md-9">
                         <input type="text" class="form-control" name="textleft"
-                               value="${options.text.left ?! '没有天生的高手，更没有永远的菜鸟 求知若饥，虚心若愚'}" placeholder="侧边栏个人介绍">
+                               value="${options.text.left ?! ''}" placeholder="侧边栏个人介绍">
                     </div>
                 </div>
 				<div class="clearfix pull-right">
@@ -119,28 +126,28 @@
                     <label class="col-md-3 control-label">Github账号</label>
                     <div class="col-md-9">
                         <input type="text" class="form-control" name="fa_github"
-                               value="${options.fa_github ?! 'zoujiayu'}" placeholder="Github账号，不输入则不显示">
+                               value="${options.fa_github ?! ''}" placeholder="Github账号，不输入则不显示">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">Twitter账号</label>
                     <div class="col-md-9">
                         <input type="text" class="form-control" name="fa_twitter"
-                               value="${options.fa_twitter ?! 'zoujiayu'}" placeholder="Twitter账号，不输入则不显示">
+                               value="${options.fa_twitter ?! ''}" placeholder="Twitter账号，不输入则不显示">
                     </div>
                 </div>
 				 <div class="form-group">
                     <label class="col-md-3 control-label">facebook账号</label>
                     <div class="col-md-9">
                         <input type="text" class="form-control" name="fa_facebook"
-                               value="${options.fa_facebook ?! 'zoujiayu'}" placeholder="facebook账号，不输入则不显示">
+                               value="${options.fa_facebook ?! ''}" placeholder="facebook账号，不输入则不显示">
                     </div>
                 </div>
 				 <div class="form-group">
                     <label class="col-md-3 control-label">QQ账号</label>
                     <div class="col-md-9">
                         <input type="text" class="form-control" name="fa_qq"
-                               value="${options.fa_qq ?! '3449904885'}" placeholder="QQ账号，不输入则不显示">
+                               value="${options.fa_qq ?! ''}" placeholder="QQ账号，不输入则不显示">
                     </div>
                 </div>
                 <div class="clearfix pull-right">
